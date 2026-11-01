@@ -4,6 +4,12 @@ An adult demo worker wants to find a short shift and reserve a place. Build one 
 
 All employers, workers, and records in this assignment are fictional. These simplified rules are the complete product rules for this exercise.
 
+## The central guarantee
+
+An active application consumes exactly one place for its worker. A server write must preserve shift capacity, one application record per worker/shift pair, and cancellation ownership, including during concurrent requests. The interface should make the resulting state understandable when its earlier view is out of date.
+
+Use that guarantee to explain your priorities and test choices. If you find an ambiguity, record your assumption or ask your hiring contact. You may critique a requirement in your notes; clearly identify any implemented deviation from the published contract.
+
 ## Fixed context
 
 - The server's current worker is always `worker-demo`. Resolve that identity on the server; do not accept a worker ID from a request body, query string, or client header.
@@ -78,8 +84,10 @@ For the two-worker concurrency test, race `worker-demo` against `worker-example-
 
 Prioritize tests for duplicate applies, full/started shifts, cancellation ownership, cancellation releasing capacity, reapplication, and concurrent access. Include at least one automated API or service integration test that exercises your real database write path.
 
+Implement the rules for valid records generally. Apart from the fixed demo identity and exercise clock, do not branch on fixture IDs or assume the supplied capacities, rates, or list size. The city allowlist stays as defined in the API contract. In the follow-up, we may use different IDs, capacities, or timestamps within the same data shapes and rules. An existing test setup or a small test-only seed is sufficient; no new import endpoint, scenario runner, or administration interface is required. See [the review format](docs/REVIEW_SESSION.md).
+
 ## Scope and time management
 
-A practical allocation is 30 minutes for setup/model/seed, 75 minutes for API and persistence, 60 minutes for UI, and 45 minutes for tests and notes. Adjust to your strengths and stop by four hours.
+A practical allocation is 30 minutes for setup/model/seed, 75 minutes for API and persistence, 60 minutes for UI, and 45 minutes for tests and notes. Around the first 30–45 minutes, preserve a few bullets describing your initial model, transaction boundary, test priorities, and assumptions in `SUBMISSION.md`; commit that checkpoint if you are using Git. Keep the original plan and append short decisions rather than rewriting it to match the final result. If submitting a ZIP, retaining the initial plan in the notes is enough. Adjust the allocation to your strengths and stop by four hours.
 
 No deployment, containers, real authentication, notifications, maps, uploads, analytics, localization, payments, or production integrations are required. Do not add features to earn points. If you run out of time, submit the working portion and explain the remaining gaps.
