@@ -1,0 +1,112 @@
+{
+  "exerciseNow": "2030-06-03T06:00:00.000Z",
+  "currentWorkerId": "worker-demo",
+  "workers": [
+    {
+      "id": "worker-demo",
+      "displayName": "Demo Worker"
+    },
+    {
+      "id": "worker-example-a",
+      "displayName": "Example Worker A"
+    },
+    {
+      "id": "worker-example-b",
+      "displayName": "Example Worker B"
+    }
+  ],
+  "shifts": [
+    {
+      "id": "shift-started",
+      "title": "Morning shelf setup",
+      "employerName": "Example Retail",
+      "city": "Tartu",
+      "startsAt": "2030-06-03T05:00:00.000Z",
+      "endsAt": "2030-06-03T07:00:00.000Z",
+      "hourlyRateCents": 1100,
+      "currency": "EUR",
+      "capacity": 2
+    },
+    {
+      "id": "shift-stockroom",
+      "title": "Stockroom assistant",
+      "employerName": "Example Supplies",
+      "city": "Tallinn",
+      "startsAt": "2030-06-03T07:00:00.000Z",
+      "endsAt": "2030-06-03T11:00:00.000Z",
+      "hourlyRateCents": 1200,
+      "currency": "EUR",
+      "capacity": 3
+    },
+    {
+      "id": "shift-last-place",
+      "title": "Event setup assistant",
+      "employerName": "Example Events",
+      "city": "Tallinn",
+      "startsAt": "2030-06-03T09:00:00.000Z",
+      "endsAt": "2030-06-03T13:00:00.000Z",
+      "hourlyRateCents": 1250,
+      "currency": "EUR",
+      "capacity": 2
+    },
+    {
+      "id": "shift-full",
+      "title": "Packing assistant",
+      "employerName": "Example Packing",
+      "city": "Tallinn",
+      "startsAt": "2030-06-03T10:00:00.000Z",
+      "endsAt": "2030-06-03T14:00:00.000Z",
+      "hourlyRateCents": 1150,
+      "currency": "EUR",
+      "capacity": 1
+    },
+    {
+      "id": "shift-market",
+      "title": "Market setup assistant",
+      "employerName": "Example Market",
+      "city": "Tallinn",
+      "startsAt": "2030-06-04T08:00:00.000Z",
+      "endsAt": "2030-06-04T12:00:00.000Z",
+      "hourlyRateCents": 1300,
+      "currency": "EUR",
+      "capacity": 2
+    },
+    {
+      "id": "shift-library",
+      "title": "Book sorting assistant",
+      "employerName": "Example Books",
+      "city": "Tartu",
+      "startsAt": "2030-06-04T12:00:00.000Z",
+      "endsAt": "2030-06-04T16:00:00.000Z",
+      "hourlyRateCents": 1100,
+      "currency": "EUR",
+      "capacity": 2
+    }
+  ],
+  "applications": [
+    {
+      "id": "application-demo-active",
+      "workerId": "worker-demo",
+      "shiftId": "shift-stockroom",
+      "status": "active"
+    },
+    {
+      "id": "application-other-last-place",
+      "workerId": "worker-example-a",
+      "shiftId": "shift-last-place",
+      "status": "active"
+    },
+    {
+      "id": "application-other-full",
+      "workerId": "worker-example-b",
+      "shiftId": "shift-full",
+      "status": "active"
+    },
+    {
+      "id": "application-demo-cancelled",
+      "workerId": "worker-demo",
+      "shiftId": "shift-library",
+      "status": "cancelled"
+    }
+  ]
+}
